@@ -30,8 +30,8 @@ var dataReceived=function(req,res){
 					rw.mail('backstage',{
 						from:rw.config.mail['backstage']['auth']['user']+" <"+rw.config.mail['backstage']['auth']['user']+">",
 						to:rw.config.backstage.email,
-						subject:"User Login Fail 5 Times ["+req.connection.remoteAddress+"]",
-						html:"User Login Fail 5 Times ["+req.connection.remoteAddress+"]"
+						subject:"User Login Fail 5 Times ["+req.connection.remoteAddress+"] @ "+rw.config.host,
+						html:"User Login Fail 5 Times ["+req.connection.remoteAddress+"]<br /><br />@ "+rw.config.host
 					},rw.emptyCall);
 					req=null;
 					res=null;
@@ -45,8 +45,8 @@ var dataReceived=function(req,res){
 				rw.mail('backstage',{
 					from:rw.config.mail['backstage']['auth']['user']+" <"+rw.config.mail['backstage']['auth']['user']+">",
 					to:rw.config.backstage.email,
-					subject:"User Login ["+req.connection.remoteAddress+"]",
-					html:"User Login ["+req.connection.remoteAddress+"]"
+					subject:"User Login ["+req.connection.remoteAddress+"] @ "+rw.config.host,
+					html:"User Login ["+req.connection.remoteAddress+"]<br /><br />@ "+rw.config.host
 				},rw.emptyCall);
 			}else{
 				rw.http.zout(JSON.stringify({'js':'$m.throw(json.re)','re':[1]}),req,res);

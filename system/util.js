@@ -84,12 +84,12 @@ exports.safe=function(s){
 	});
 };
 
-exports.safeReg=function(s){
+exports.safeReg=function(s,t){
 	if(typeof(s)=='undefined'){
 		return;
 	}
 	s=s.trim();
-	return s.replace(/\.|\+|\*|\^|\$|\-|\[|\]|\||\/|\\|\{|\}|\(|\)|\,|\s|\?/g,function(str){
+	s=s.replace(/\.|\+|\*|\^|\$|\-|\[|\]|\||\/|\\|\{|\}|\(|\)|\,|\s|\?/g,function(str){
 		switch(str){
 			case '.':
 			case '+':
@@ -112,13 +112,19 @@ exports.safeReg=function(s){
 			case ',':
 				return '\\'+str;
 				break;
-			case ' ':
-				return '.*';
+			/*case ' ':
+				return '.*';*/
 				break;
 			default:
 				return str;
 		}
 	});
+	if(!t){
+		return s.replace(/\s/g,'.*');
+	}else{
+		s=s.split(' ');
+		return s.join('.*')+'|'+s.reverse().join('.*');
+	}
 };
 
 exports.dayName=function(id,lan){

@@ -3,9 +3,13 @@ console.log('- First Tick -');
 global.rw={};
 global.rw.emptyCall=function(){return;};
 
-console.log('Load System Module [FS] ...');
+//console.log('Load System Module [FS] ...');
+//global.rw.fs=require('fs');
+//console.log('System Module [FS] Loaded.');
+
+console.log('Load Module [graceful-fs] ...');
 global.rw.fs=require('fs');
-console.log('System Module [FS] Loaded.');
+console.log('Module [graceful-fs] Loaded.');
 
 console.log('Load Config File ...');
 global.rw.config=require('../config/config.js').config;

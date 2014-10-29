@@ -10,12 +10,12 @@ global.rw.mongoColList={};
 
 dbOpened=function(e,db){
 	if(e){
-		rw.log.write('Database ['+db.databaseName+'] Error.'+e,'error');
+		rw.log.write('Database Open ['+db.databaseName+'] Error.'+e,'error');
 		return;
 	}
 	db.authenticate(rw.config.mongo[db.databaseName].user,rw.config.mongo[db.databaseName].pass,{a:1},function(e){
 		if(e){
-			rw.log.write('Database ['+db.databaseName+'] Error.'+e,'error');
+			rw.log.write('Database Auth ['+db.databaseName+'] Error.'+e,'error');
 			return;
 		}
 		var i;

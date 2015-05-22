@@ -166,6 +166,7 @@ exports.isEmail=function(email){
 };
 
 exports.md5=function(s,d){
+	s=new Buffer(s);
 	d=d?d:'hex';
 	var m=crypto.createHash('md5');
 	m.update(s);

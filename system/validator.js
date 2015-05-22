@@ -1,5 +1,10 @@
 exports.validate=function(m,o){
 	var i,re=[];
+	for(i in m){
+		if(m[i].must && typeof(o[i])=="undefined"){
+			re.push(m[i].fail);
+		}
+	}
 	for(i in o){
 		if(m[i]){
 			if(m[i].email){

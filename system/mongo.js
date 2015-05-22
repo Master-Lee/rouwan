@@ -23,10 +23,10 @@ dbOpened=function(e,db){
 			rw.log.write('Opening Collection ['+db.databaseName+'.'+rw.config.mongo[db.databaseName].col[i]+'] ...');
 			db.collection(rw.config.mongo[db.databaseName].col[i],function(e,col){
 				if(e){
-					rw.log.write('Collection ['+col.db.databaseName+'.'+col.collectionName+'] Error.'+e,'error');
+					rw.log.write('Collection Error.'+e+e.stack,'error');
 					return;
 				}
-				rw.mongoColList[col.db.databaseName+'.'+col.collectionName]=col;
+				rw.mongoColList[col.s.dbName+'.'+col.s.name]=col;
 				colOpened();
 			});
 		}

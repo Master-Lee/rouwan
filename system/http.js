@@ -445,6 +445,7 @@ exports.receivePostData=function(req,res,callback){
 				}
 				break;
 		}
+		req.postOri=data.toString();
 		try{
 			req.post=JSON.parse(data.toString());
 		}catch(e){
@@ -476,6 +477,7 @@ exports.runModule=function(req,res){
 		req.timetag=[process.hrtime()];
 	}
 	var m=req.server+'.'+req.module;
+	//console.log(m);
 	if(!rw.moduleList[m]){
 		try{
 			var mp=rw.path.normalize(rw.config.server[req.server].root+req.module+'.js');

@@ -71,6 +71,11 @@ global.rw.t={};
 global.rw.t=require('./template.js');
 rw.log.write('Module [Template] Loaded.');
 
+rw.log.write('Load Module [TPL] ...');
+global.rw.tpl={};
+global.rw.tpl=require('./tpl.js');
+rw.log.write('Module [TPL] Loaded.');
+
 rw.log.write('Load Module [Validator] ...');
 global.rw.validator=require('./validator.js');
 rw.log.write('Module [Validator] Loaded.');

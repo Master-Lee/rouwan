@@ -130,14 +130,14 @@ exports.config={
 	mongo:{
 		'DATABASE_NAME_A':{
 			host:'HOST',
-			port:/* PORT */,
+			port:27017,/* PORT */
 			user:'USER',
 			pass:'PASS',
 			col:['COL_A','COL_B']
 		},
 		'DATABASE_NAME_B':{
 			host:'HOST',
-			port:/* PORT */,
+			port:27017,/* PORT */
 			user:'USER',
 			pass:'PASS',
 			col:['COL_A','COL_B']

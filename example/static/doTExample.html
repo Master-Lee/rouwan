@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>{{=it.title}}</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                font: 14px Arial;
+            }
+            h1, footer, article {
+                margin: 0 auto;
+                width: 600px;
+            }
+            h1 {
+                line-height: 60px;
+                border-bottom: 1px solid #ddd;
+                font-weight: normal;
+                margin-top: 60px;
+            }
+            .title {
+                line-height: 60px;
+            }
+            .description {
+                color: #888;
+            }
+            article, footer {
+                margin-top: 30px;
+                line-height: 30px;
+            }
+            article p {
+                font-size: 16px;
+            }
+            footer {
+                margin-top: 50px;
+                border-top: 1px solid #ddd;
+            }
+        </style>
+    </header>
+    <body>
+        <h1>{{=it.hello}}</h1>
+        <article>
+            <p>doT.js is not template engine, just evaluator.</p>
+            {{ for(keyword in it.why) { }}
+            <div class="list-item">
+                <h2 class="title">{{=keyword}}</h2>
+                <div class="description">{{=it.why[keyword]}}</div>
+            </div>
+            {{ } }}
+        </article>
+        <footer>
+            <p>{{=it.counter}} req/s; {{=it.serverHeader}}</p>
+        </footer>
+    </body>
+</html>

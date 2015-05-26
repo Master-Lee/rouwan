@@ -1,3 +1,28 @@
-config/config.js
+# OS X custom attributes.
 .DS_Store
+
+# NPM ignore file.
 .npmignore
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Dependency directory
+# Commenting this out is preferred by some people, see
+# https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
+node_modules
+
+# WebStorm project files
+.idea
+
+# Config file
+config/config.js
+
+# A example bootstrap file
+example.js
